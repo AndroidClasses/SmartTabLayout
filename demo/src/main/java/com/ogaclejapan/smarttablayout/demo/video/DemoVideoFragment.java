@@ -1,6 +1,7 @@
 package com.ogaclejapan.smarttablayout.demo.video;
 
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -75,17 +76,22 @@ public class DemoVideoFragment extends Fragment {
 
     private LoaderManager.LoaderCallbacks<Cursor> mLoaderCallback = new LoaderManager.LoaderCallbacks<Cursor>() {
 
+        private final Uri IMAGE_URI = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
         private final String[] IMAGE_PROJECTION = {
-                MediaStore.Images.Media.DATA,
-                MediaStore.Images.Media.DISPLAY_NAME,
-                MediaStore.Images.Media.DATE_ADDED,
-                MediaStore.Images.Media._ID };
+                MediaStore.Video.Media.TITLE,  //音乐名
+                MediaStore.Video.Media.DURATION,            //音乐的总时间
+                MediaStore.Video.Media.ARTIST,          //艺术家
+                MediaStore.Video.Media._ID,             //id号
+                MediaStore.Video.Media.DISPLAY_NAME,        //音乐文件名
+                MediaStore.Video.Media.DATA
+        };
+
 
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             if(id == mPosition) {
                 CursorLoader cursorLoader = new CursorLoader(getActivity(),
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI, IMAGE_PROJECTION,
+                        IMAGE_URI, IMAGE_PROJECTION,
                         null, null, IMAGE_PROJECTION[2] + " DESC");
                 return cursorLoader;
             }

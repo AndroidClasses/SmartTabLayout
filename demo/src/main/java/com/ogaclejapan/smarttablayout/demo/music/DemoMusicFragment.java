@@ -1,6 +1,7 @@
 package com.ogaclejapan.smarttablayout.demo.music;
 
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import com.ogaclejapan.smarttablayout.demo.R;
 import com.ogaclejapan.smarttablayout.demo.model.CommonItem;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,18 +76,21 @@ public class DemoMusicFragment extends Fragment {
     }
 
     private LoaderManager.LoaderCallbacks<Cursor> mLoaderCallback = new LoaderManager.LoaderCallbacks<Cursor>() {
-
+        private final Uri IMAGE_URI = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         private final String[] IMAGE_PROJECTION = {
-                MediaStore.Images.Media.DATA,
-                MediaStore.Images.Media.DISPLAY_NAME,
-                MediaStore.Images.Media.DATE_ADDED,
-                MediaStore.Images.Media._ID };
+                MediaStore.Audio.Media.TITLE,  //音乐名
+                MediaStore.Audio.Media.DURATION,            //音乐的总时间
+                MediaStore.Audio.Media.ARTIST,          //艺术家
+                MediaStore.Audio.Media._ID,             //id号
+                MediaStore.Audio.Media.DISPLAY_NAME,        //音乐文件名
+                MediaStore.Audio.Media.DATA
+                };
 
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             if(id == mPosition) {
                 CursorLoader cursorLoader = new CursorLoader(getActivity(),
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI, IMAGE_PROJECTION,
+                        IMAGE_URI, IMAGE_PROJECTION,
                         null, null, IMAGE_PROJECTION[2] + " DESC");
                 return cursorLoader;
             }
@@ -102,8 +107,8 @@ public class DemoMusicFragment extends Fragment {
                     data.moveToFirst();
                     do {
 //                        String path = data.getString(data.getColumnIndexOrThrow(IMAGE_PROJECTION[0]));
-                        String name = data.getString(data.getColumnIndexOrThrow(IMAGE_PROJECTION[1]));
-                        long dateTime = data.getLong(data.getColumnIndexOrThrow(IMAGE_PROJECTION[2]));
+                        String name = data.getString(data.getColumnIndexOrThrow(IMAGE_PROJECTION[0]));
+                        long dateTime = data.getLong(data.getColumnIndexOrThrow(IMAGE_PROJECTION[1]));
 
                         CommonItem image = new CommonItem(name, dateTime);
                         images.add(image);

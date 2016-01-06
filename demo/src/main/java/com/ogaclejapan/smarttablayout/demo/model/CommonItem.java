@@ -3,7 +3,7 @@ package com.ogaclejapan.smarttablayout.demo.model;
 /**
  * Created by yangfeng on 16-1-6.
  */
-public class MusicItem {
+public class CommonItem {
     public String getmLabel() {
         return mLabel;
     }
@@ -23,11 +23,11 @@ public class MusicItem {
     private String mLabel;
     private String mTime;
 
-    public MusicItem() {
+    public CommonItem() {
         this("DEMO", System.currentTimeMillis());
     }
 
-    public MusicItem(String name, long time) {
+    public CommonItem(String name, long time) {
         this.mLabel = name;
         this.mTime = "" + time;
     }

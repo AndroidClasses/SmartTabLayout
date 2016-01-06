@@ -1,4 +1,4 @@
-package com.ogaclejapan.smarttablayout.demo.music;
+package com.ogaclejapan.smarttablayout.demo.video;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -24,12 +24,12 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DemoMusicFragment extends Fragment {
+public class DemoVideoFragment extends Fragment {
 
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
-    private DemoMusicAdapter mMusicAdapter;
+    private DemoVideoAdapter mMusicAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -48,13 +48,13 @@ public class DemoMusicFragment extends Fragment {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 
-        mMusicAdapter = new DemoMusicAdapter(getActivity());
+        mMusicAdapter = new DemoVideoAdapter(getActivity());
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setAdapter(mMusicAdapter);
         mMusicAdapter.setOnItemClickListener(themeItemClickListener);
     }
 
-    DemoMusicAdapter.TextStickClickListener themeItemClickListener = new DemoMusicAdapter.TextStickClickListener() {
+    DemoVideoAdapter.TextStickClickListener themeItemClickListener = new DemoVideoAdapter.TextStickClickListener() {
         @Override
         public void onItemClick(String label, CommonItem commonItem) {
         }

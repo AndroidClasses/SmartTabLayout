@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.demo.music.DemoMusicActivity;
+import com.ogaclejapan.smarttablayout.demo.photo.DemoPhotoActivity;
+import com.ogaclejapan.smarttablayout.demo.video.DemoVideoActivity;
 
 public enum Demo {
 
@@ -145,6 +147,21 @@ public enum Demo {
     @Override
     public void startActivity(Context context) {
       DemoLikeMediumActivity.startActivity(context, this);
+    }
+  },
+
+  PHOTO_TAG(R.string.demo_title_advanced_photo, R.layout.demo_like_a_medium_tag) {
+    @Override
+    public int[] tabs() {
+      return new int[] {
+              R.string.demo_tab_mine,
+              R.string.demo_tab_all
+      };
+    }
+
+    @Override
+    public void startActivity(Context context) {
+      DemoPhotoActivity.startActivity(context, this);
     }
   },
 

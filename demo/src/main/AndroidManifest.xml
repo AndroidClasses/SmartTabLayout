@@ -46,6 +46,13 @@
       />
 
     <activity
+        android:name=".photo.DemoPhotoActivity"
+        android:label="@string/app_name"
+        android:parentActivityName=".MainActivity"
+        android:theme="@style/AppTheme.NoActionBar"
+        />
+
+    <activity
         android:name=".music.DemoMusicActivity"
         android:label="@string/app_name"
         android:parentActivityName=".MainActivity"
@@ -53,7 +60,7 @@
         />
 
     <activity
-        android:name=".DemoVideoActivity"
+        android:name=".video.DemoVideoActivity"
         android:label="@string/app_name"
         android:parentActivityName=".MainActivity"
         android:theme="@style/AppTheme.NoActionBar"

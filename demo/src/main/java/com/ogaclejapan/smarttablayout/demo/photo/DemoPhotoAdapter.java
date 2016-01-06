@@ -1,4 +1,4 @@
-package com.ogaclejapan.smarttablayout.demo.music;
+package com.ogaclejapan.smarttablayout.demo.photo;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -16,13 +16,13 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DemoMusicAdapter extends RecyclerView.Adapter<DemoMusicAdapter.ViewHolder> {
+public class DemoPhotoAdapter extends RecyclerView.Adapter<DemoPhotoAdapter.ViewHolder> {
 	private Context mContext;
 	private int mSelectedId;
 
 	private List<CommonItem> typeFaceArray = new ArrayList<>();
 
-	public DemoMusicAdapter(Context context) {
+	public DemoPhotoAdapter(Context context) {
 		mContext = context;
 
 		typeFaceArray.add(new CommonItem());

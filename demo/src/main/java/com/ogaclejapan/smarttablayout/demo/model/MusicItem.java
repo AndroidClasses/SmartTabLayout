@@ -24,7 +24,11 @@ public class MusicItem {
     private String mTime;
 
     public MusicItem() {
-        this.mLabel = "DEMO";
-        this.mTime = "" + System.currentTimeMillis();
+        this("DEMO", System.currentTimeMillis());
+    }
+
+    public MusicItem(String name, long time) {
+        this.mLabel = name;
+        this.mTime = "" + time;
     }
 }

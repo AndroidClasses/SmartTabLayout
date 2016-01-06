@@ -39,6 +39,11 @@ public class DemoMusicAdapter extends RecyclerView.Adapter<DemoMusicAdapter.View
 		notifyDataSetChanged();
 	}
 
+	public void setData(List<MusicItem> images) {
+		typeFaceArray = images;
+		notifyDataSetChanged();
+	}
+
 	public static class ViewHolder extends RecyclerView.ViewHolder {
 		@Bind(R.id.text_label)
 		TextView mLabelView;

@@ -1,4 +1,4 @@
-package com.ogaclejapan.smarttablayout.demo;
+package com.ogaclejapan.smarttablayout.demo.music;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.ogaclejapan.smarttablayout.demo.Demo;
+import com.ogaclejapan.smarttablayout.demo.R;
+import com.ogaclejapan.smarttablayout.demo.common.BaseActivity;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -44,7 +47,7 @@ public class DemoMusicActivity extends BaseActivity {
 
     FragmentPagerItems pages = new FragmentPagerItems(this);
     for (int titleResId : demo.tabs()) {
-      pages.add(FragmentPagerItem.of(getString(titleResId), DemoFragment.class));
+      pages.add(FragmentPagerItem.of(getString(titleResId), DemoMusicFragment.class));
     }
 
     FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(

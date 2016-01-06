@@ -6,32 +6,34 @@
     android:background="@color/white"
     >
 
-  <LinearLayout
-      android:id="@+id/header"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      >
+  <include layout="@layout/including_tab_toolbar"
+      android:id="@+id/header" />
+  <!--<LinearLayout-->
+      <!--android:id="@+id/header"-->
+      <!--android:orientation="vertical"-->
+      <!--android:layout_width="match_parent"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--&gt;-->
 
-    <android.support.v7.widget.Toolbar
-        android:id="@id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:background="@color/transparent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:theme="@style/ThemeOverlay.AppCompat.Light"
-        >
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--android:background="@color/transparent"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--app:theme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--&gt;-->
 
-    </android.support.v7.widget.Toolbar>
+    <!--</android.support.v7.widget.Toolbar>-->
 
-    <FrameLayout
-        android:id="@id/tab"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/tab_height"
-        />
+    <!--<FrameLayout-->
+        <!--android:id="@id/tab"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/tab_height"-->
+        <!--/>-->
 
-  </LinearLayout>
+  <!--</LinearLayout>-->
 
   <android.support.v4.view.ViewPager
       android:id="@id/viewpager"

@@ -14,7 +14,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-public class DemoLikeMediumActivity extends ActionBarActivity {
+public class DemoLikeMediumActivity extends BaseActivity {
 
   private static final String KEY_DEMO = "demo";
 
@@ -28,14 +28,15 @@ public class DemoLikeMediumActivity extends ActionBarActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_like_a_medium);
+  }
+
+  @Override
+  public void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
 
     Demo demo = getDemo();
 
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-    toolbar.setTitle(demo.titleResId);
-    setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+    setTitle(demo.titleResId);
     ViewGroup tab = (ViewGroup) findViewById(R.id.tab);
     tab.addView(LayoutInflater.from(this).inflate(demo.layoutResId, tab, false));
 

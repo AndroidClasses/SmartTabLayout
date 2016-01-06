@@ -39,4 +39,7 @@ dependencies {
   compile project(':library')
   compile project(':utils-v4')
   compile 'com.android.support:appcompat-v7:22.2.1'
+  compile 'com.android.support:appcompat-v7:22.2.1'
+  compile 'com.android.support:design:22.2.1'
+  compile 'com.jakewharton:butterknife:7.0.1'
 }

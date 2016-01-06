@@ -43,6 +43,19 @@
       android:theme="@style/AppTheme.NoActionBar"
       />
 
+    <activity
+        android:name=".DemoMusicActivity"
+        android:label="@string/app_name"
+        android:parentActivityName=".MainActivity"
+        android:theme="@style/AppTheme.NoActionBar"
+        />
+
+    <activity
+        android:name=".DemoVideoActivity"
+        android:label="@string/app_name"
+        android:parentActivityName=".MainActivity"
+        android:theme="@style/AppTheme.NoActionBar"
+        />
   </application>
 
 </manifest>

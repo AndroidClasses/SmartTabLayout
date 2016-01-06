@@ -136,14 +136,44 @@ public enum Demo {
     @Override
     public int[] tabs() {
       return new int[] {
-          R.string.demo_tab_like_a_medium_top,
-          R.string.demo_tab_like_a_medium_latest
+              R.string.demo_tab_like_a_medium_top,
+              R.string.demo_tab_like_a_medium_latest
       };
     }
 
     @Override
     public void startActivity(Context context) {
       DemoLikeMediumActivity.startActivity(context, this);
+    }
+  },
+
+  MUSIC_TAG(R.string.demo_title_advanced_music, R.layout.demo_like_a_medium_tag) {
+    @Override
+    public int[] tabs() {
+      return new int[] {
+              R.string.demo_tab_mine,
+              R.string.demo_tab_all
+      };
+    }
+
+    @Override
+    public void startActivity(Context context) {
+      DemoMusicActivity.startActivity(context, this);
+    }
+  },
+
+  VIDEO_TAG(R.string.demo_title_advanced_video, R.layout.demo_like_a_medium_tag) {
+    @Override
+    public int[] tabs() {
+      return new int[] {
+              R.string.demo_tab_mine,
+              R.string.demo_tab_all
+      };
+    }
+
+    @Override
+    public void startActivity(Context context) {
+      DemoVideoActivity.startActivity(context, this);
     }
   };
 

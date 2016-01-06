@@ -20,6 +20,8 @@
   <string name="demo_title_indicator_trick2">Indicator Thickness Trick 2</string>
   <string name="demo_title_right_to_left">RTL support</string>
   <string name="demo_title_advanced_medium">Advanced: Like a Medium Tag (since 1.2~)</string>
+  <string name="demo_title_advanced_music">Advanced: Music</string>
+  <string name="demo_title_advanced_video">Advanced: Video</string>
 
 
   <string name="demo_tab_1">Cupcake</string>
@@ -37,4 +39,6 @@
   <string name="demo_tab_like_a_medium_top">Top</string>
   <string name="demo_tab_like_a_medium_latest">Latest</string>
 
+  <string name="demo_tab_mine">Mine</string>
+  <string name="demo_tab_all">All</string>
 </resources>
